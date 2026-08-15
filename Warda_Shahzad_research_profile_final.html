@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warda Shahzad | Kesterite Thin Film Research</title>
+<meta name="keywords" content="Kesterite, CZTS, Cu2ZnSnS4, thin films, photovoltaics, semiconductor, solar cells, materials chemistry">
+<meta name="description" content="Warda Shahzad, PhD Chemistry, research on kesterite (CZTS) thin films, photovoltaics, and semiconductor materials.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#fdf3f6;
+    --panel:#f7e8ee;
+    --panel-2:#eaf1f7;
+    --paper:#372c3f;
+    --paper-dim:#8c7b8e;
+    --copper:#d9718f;
+    --copper-bright:#c14d70;
+    --gold:#4f7fa3;
+    --steel:#3f6f96;
+    --purple:#9a6fb0;
+    --line: rgba(55,44,63,0.13);
+    --maxw: 920px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0 0 0.4em 0;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  a{color:var(--copper-bright);}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    padding:120px 0 100px 0;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .film-band{
+    position:absolute;
+    top:0; left:0; right:0; height:6px;
+    background:linear-gradient(90deg,
+      #f4b6c8 0%, #d9718f 14%, #c98fc0 28%, #a9c9de 42%,
+      #6fa3cc 56%, #3f6f96 70%, #9a6fb0 84%, #f4b6c8 100%);
+    background-size:200% 100%;
+    animation: shimmer 14s linear infinite;
+  }
+  @keyframes shimmer{
+    0%{background-position:0% 0%;}
+    100%{background-position:200% 0%;}
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px; background:var(--gold);
+    display:inline-block;
+  }
+  header.hero h1{
+    font-size:clamp(34px, 6vw, 58px);
+    color:var(--paper);
+    max-width:11ch;
+  }
+  header.hero .role{
+    font-size:18px;
+    color:var(--paper-dim);
+    max-width:56ch;
+    margin-top:14px;
+  }
+  header.hero .role b{color:var(--copper-bright); font-weight:500;}
+  .hero-links{
+    margin-top:34px;
+    display:flex; flex-wrap:wrap; gap:14px;
+  }
+  .keyword-row{
+    margin-top:22px;
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .keyword-row span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.04em;
+    color:var(--copper-bright);
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:6px 12px;
+    border-radius:20px;
+  }
+  .hero-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    color:var(--paper);
+    border:1px solid var(--line);
+    padding:9px 16px;
+    border-radius:2px;
+    transition:border-color .2s, color .2s;
+  }
+  .hero-links a:hover{border-color:var(--copper-bright); color:var(--copper-bright);}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:76px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .sec-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--paper-dim);
+    letter-spacing:0.1em;
+  }
+  .sec-head{
+    display:flex; align-items:baseline; gap:14px;
+    margin-bottom:36px;
+  }
+  .sec-head h2{font-size:26px; color:var(--paper);}
+
+  /* Bio */
+  #about p{max-width:66ch; color:var(--paper); font-size:16.5px;}
+  #about p + p{margin-top:14px;}
+  .affil{
+    margin-top:28px;
+    font-size:14.5px;
+    color:var(--paper-dim);
+    border-left:2px solid var(--copper);
+    padding-left:16px;
+  }
+  .affil b{color:var(--paper); font-weight:500;}
+
+  /* Research */
+  .doping-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    gap:18px;
+  }
+  .dope-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-top:3px solid var(--accent, var(--copper));
+    padding:22px 20px;
+    border-radius:3px;
+  }
+  .dope-card .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--accent, var(--copper));
+    letter-spacing:0.06em;
+  }
+  .dope-card h3{font-size:19px; margin-top:6px; color:var(--paper);}
+  .dope-card p{font-size:14px; color:var(--paper-dim); margin-top:8px;}
+  .card-li{--accent:var(--purple);}
+  .card-na{--accent:var(--copper-bright);}
+  .card-k{--accent:var(--steel);}
+
+  .research-note{
+    margin-top:30px;
+    font-size:14.5px;
+    color:var(--paper-dim);
+    font-style:italic;
+  }
+
+  /* Publications */
+  .pub{
+    padding:20px 0;
+    border-top:1px solid var(--line);
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .pub:first-of-type{border-top:none;}
+  .pub .venue{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--gold);
+    text-transform:uppercase; letter-spacing:0.06em;
+  }
+  .pub .title{font-size:17px; color:var(--paper);}
+  .pub .desc{font-size:14px; color:var(--paper-dim); max-width:62ch;}
+  .pub .meta{font-size:13.5px; color:var(--paper-dim);}
+  .id-row{
+    margin-top:20px; display:flex; gap:22px; flex-wrap:wrap;
+    font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--paper-dim);
+  }
+  .id-row a{color:var(--paper-dim); text-decoration:underline; text-underline-offset:3px;}
+  .id-row a:hover{color:var(--copper-bright);}
+
+  /* CV */
+  .cv-row{
+    display:grid; grid-template-columns:120px 1fr;
+    gap:20px; padding:16px 0; border-top:1px solid var(--line);
+  }
+  .cv-row:first-of-type{border-top:none;}
+  .cv-row .yr{
+    font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--gold);
+  }
+  .cv-row .what b{color:var(--paper); font-weight:500;}
+  .cv-row .what{color:var(--paper-dim); font-size:14.5px;}
+
+  /* Contact */
+  #contact .lead{font-size:16.5px; max-width:56ch; color:var(--paper);}
+  .contact-links{margin-top:26px; display:flex; flex-direction:column; gap:10px;}
+  .contact-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14.5px; text-decoration:none;
+    color:var(--paper); display:inline-flex; align-items:center; gap:10px;
+  }
+  .contact-links a:hover{color:var(--copper-bright);}
+  .contact-links a::before{content:"→"; color:var(--copper);}
+
+  footer{
+    padding:36px 0 60px 0;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--paper-dim);
+  }
+
+  @media (max-width:560px){
+    header.hero{padding:90px 0 70px 0;}
+    .cv-row{grid-template-columns:1fr;}
+    .cv-row .yr{margin-bottom:2px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .film-band{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="film-band"></div>
+  <div class="wrap">
+    <div class="eyebrow">PhD Chemistry</div>
+    <h1>Warda Shahzad</h1>
+    <p class="role">I grow <b>alkali-doped Cu₂ZnSnS₄ (CZTS) kesterite thin films</b> by solution-based synthesis and study how lithium, sodium, and potassium doping reshape defect chemistry, secondary-phase formation, and optical bandgap for photovoltaic and semiconductor applications.</p>
+    <div class="keyword-row">
+      <span>Kesterite</span><span>CZTS</span><span>Thin Films</span><span>Photovoltaics</span><span>Semiconductor</span>
+    </div>
+    <div class="hero-links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+      <a href="Warda_Shahzad_CV.pdf" target="_blank">View CV</a>
+      <a href="Warda_Shahzad_CV.pdf" download>Download CV</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>About</h2>
+    </div>
+    <p>I'm a PhD candidate in Chemistry (Materials Chemistry) at COMSATS University Islamabad (Abbottabad Campus), working on the structural, optical, and electronic properties of kesterite thin films for thin-film solar cells. My research centers on alkali metal doping with lithium, sodium, and potassium, targeting suppression of Cu/Zn antisite defects and secondary phases (ZnS, Cu₂SnS₃), the primary loss mechanisms limiting CZTS device efficiency.</p>
+    <p>I synthesize films by solution-based chemical deposition and characterize them across XRD, SEM/EDX, and UV-Vis spectroscopy, using Urbach energy and dislocation density as quantitative proxies for defect suppression across each doping series. I'm currently seeking a postdoctoral position to extend this work to new synthesis platforms and semiconductor material systems.</p>
+    <div class="affil">
+      <div><b>Supervisor:</b> Prof. Dr. Bushra Ismail (<a href="mailto:bushraismail@cuiatd.edu.pk">bushraismail@cuiatd.edu.pk</a>)</div>
+      <div><b>Institution:</b> COMSATS University Islamabad, Abbottabad Campus</div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>Research overview</h2>
+    </div>
+    <div class="doping-grid">
+      <div class="dope-card card-li">
+        <div class="tag">LCZTS series</div>
+        <h3>Lithium doping</h3>
+        <p>Tuned the bandgap from 1.36 to 1.27 eV and reduced dislocation density from 7.3 to 2.13 × 10¹⁴ m⁻², with electrical conductivity reaching 3.6 Ω⁻¹cm⁻¹ through Li doping and two-step annealing.</p>
+      </div>
+      <div class="dope-card card-na">
+        <div class="tag">NCZTS series</div>
+        <h3>Sodium doping</h3>
+        <p>Narrowed the bandgap from 1.50 to 1.00 eV and reduced microstrain from 0.37 × 10⁻³ to 0.13 × 10⁻³, linking Na incorporation to structural and optical changes in CBD-grown CZTS.</p>
+      </div>
+      <div class="dope-card card-k">
+        <div class="tag">KCZTS series</div>
+        <h3>Potassium doping</h3>
+        <p>Expanded the lattice (a: 5.43→5.49 Å), increased crystallite size from 40 to 52 nm, and tuned the bandgap from 1.50 to 1.42 eV with absorption exceeding 10⁴ cm⁻¹.</p>
+      </div>
+    </div>
+    <div class="research-note">
+      <strong>Across the Li–Na–K doping series:</strong> demonstrated a consistent structure–property trend in which alkali incorporation narrowed the CZTS bandgap by 0.06–0.5 eV while improving crystallinity, with dislocation density reduced by approximately 2–4× across the studied systems.
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2>Publications</h2>
+    </div>
+
+    <div class="pub">
+      <div class="venue">First-author · PhD research</div>
+      <div class="title">Optical Materials · 2025 · Li-doped CZTS</div>
+      <div class="desc">Tuned the bandgap from 1.36 to 1.27 eV and reduced dislocation density from 7.3 to 2.13 × 10¹⁴ m⁻² via Li doping and two-step annealing, with electrical conductivity reaching 3.6 Ω⁻¹cm⁻¹.</div>
+      <div class="meta"><a href="https://doi.org/10.1016/j.optmat.2025.117582" target="_blank">View article ↗</a></div>
+    </div>
+    <div class="pub">
+      <div class="venue">First-author · PhD research</div>
+      <div class="title">Journal of Physics and Chemistry of Solids · 2025 · Na-doped CZTS</div>
+      <div class="desc">Narrowed the bandgap from 1.50 to 1.00 eV and reduced microstrain from 0.37 × 10⁻³ to 0.13 × 10⁻³, establishing a direct structural–optical correlation for Na-induced Cu/Zn antisite suppression in CBD-grown CZTS.</div>
+      <div class="meta"><a href="https://doi.org/10.1016/j.jpcs.2025.113116" target="_blank">View article ↗</a></div>
+    </div>
+    <div class="pub">
+      <div class="venue">First-author · PhD research · Manuscript under review</div>
+      <div class="title">K-doped CZTS</div>
+      <div class="desc">Expanded the lattice (a: 5.43→5.49 Å), increased crystallite size from 40 to 52 nm, and tuned the bandgap from 1.50 to 1.42 eV, with absorption coefficient exceeding 10⁴ cm⁻¹.</div>
+    </div>
+    <div class="pub">
+      <div class="venue">First-author · MS research</div>
+      <div class="title">Ceramics International · 2022 · Perovskite/graphene oxide photocatalyst</div>
+      <div class="desc">Engineered a Ba/Mn-doped perovskite/graphene oxide composite that reduced the bandgap from 5.75 to 2.36 eV, enabling visible-light photocatalytic dye degradation.</div>
+      <div class="meta"><a href="https://doi.org/10.1016/j.ceramint.2022.05.151" target="_blank">View article ↗</a></div>
+    </div>
+    <div class="pub">
+      <div class="venue">Co-authored</div>
+      <div class="title">Materials Science and Engineering B · 2024</div>
+      <div class="meta"><a href="https://doi.org/10.1016/j.mseb.2024.117273" target="_blank">doi.org/10.1016/j.mseb.2024.117273</a></div>
+    </div>
+    <div class="pub">
+      <div class="venue">Co-authored</div>
+      <div class="title">Journal of Inorganic and Organometallic Polymers · 2025</div>
+      <div class="meta"><a href="https://link.springer.com/article/10.1007/s10904-025-03621-x" target="_blank">View article ↗</a></div>
+    </div>
+    <div class="pub">
+      <div class="venue">Peer review service</div>
+      <div class="title">Reviewer, Journal of Materials Science: Materials in Electronics (Springer Nature) · 2025</div>
+    </div>
+
+    <div class="id-row">
+      <a href="https://orcid.org/0009-0004-9958-5383" target="_blank">ORCID: 0009-0004-9958-5383</a>
+      <a href="https://scholar.google.com/citations?user=Y5FmMc8AAAAJ" target="_blank">Google Scholar ↗</a>
+      <a href="https://www.researchgate.net/profile/Warda-Shahzad" target="_blank">ResearchGate ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="cv">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2>CV &amp; education</h2>
+    </div>
+    <div class="cv-row">
+      <div class="yr">2020–26</div>
+      <div class="what"><b>PhD, Chemistry</b> at COMSATS University Islamabad, Abbottabad Campus. Thesis: "Exploration of the Physical Properties of Kesterite Thin Films Modified by Alkali Metal Cations for Sunlight Harvesting." Submitted for foreign evaluation; external viva pending.</div>
+    </div>
+    <div class="cv-row">
+      <div class="yr">2017–19</div>
+      <div class="what"><b>MS, Chemistry</b> at COMSATS University Islamabad, Abbottabad Campus. Thesis on visible-light photocatalysis using alkaline earth zirconate perovskite/graphene oxide composites for wastewater treatment.</div>
+    </div>
+    <div class="cv-row">
+      <div class="yr">2015–17</div>
+      <div class="what"><b>MSc, Chemistry</b> at University of Wah, Pakistan. Research internship, Pakistan Ordnance Factories (POF) Institute of Technology, SJL Dept, Wah Cantt.</div>
+    </div>
+    <div class="cv-row">
+      <div class="yr">2025</div>
+      <div class="what"><b>2nd Prize, Poster Presentation</b> at SSCS Conference, COMSATS University Islamabad, Abbottabad Campus.</div>
+    </div>
+    <div class="cv-row">
+      <div class="yr">2024</div>
+      <div class="what"><b>Oral Presentation</b> at ICRA-C 2024, NUST Islamabad.</div>
+    </div>
+    <div class="cv-row">
+      <div class="yr">2023</div>
+      <div class="what"><b>Poster Presentation</b> at ICC RTC&amp;RET, University of Swat.</div>
+    </div>
+    <div class="cv-row">
+      <div class="yr">2026</div>
+      <div class="what"><b>Advanced Analytical Instrumentation Training</b> at National Centre for Physics, Islamabad.</div>
+    </div>
+    <div class="cv-row">
+      <div class="yr">2019</div>
+      <div class="what">Participant, "Nanomaterials: New Trends in Development and Applications," Forman Christian College University, Lahore.</div>
+    </div>
+    <div class="cv-row">
+      <div class="yr">2018</div>
+      <div class="what">Participant, International Workshop on Energy Materials and Nanotechnology (EMNT 2018) at COMSATS University Islamabad, Abbottabad Campus.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2>Contact</h2>
+    </div>
+    <p class="lead">Open to collaboration, questions about kesterite photovoltaics, or anything related to defect engineering in earth-abundant absorber materials. Currently seeking postdoctoral opportunities.</p>
+    <div class="contact-links">
+      <a href="mailto:warda.shahzad.17@gmail.com">warda.shahzad.17@gmail.com</a>
+      <a href="https://orcid.org/0009-0004-9958-5383" target="_blank">ORCID profile</a>
+      <a href="https://scholar.google.com/citations?user=Y5FmMc8AAAAJ" target="_blank">Google Scholar</a>
+      <a href="https://www.researchgate.net/profile/Warda-Shahzad" target="_blank">ResearchGate profile</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Warda Shahzad · updated 2026
+</footer>
+
+</body>
+</html>
